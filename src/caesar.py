@@ -3,28 +3,23 @@ class CaesarCipher:
     self.key = 5
     self.alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-  def cipher(self, word: str):
+  def execute(self, word: str, command: str):
     new_word = ''
 
     for letter in word:
-      index = self.alphabet.index(letter.upper()) + self.key
+      base_index = self.alphabet.index(letter.upper())
+      key = self.key
 
-      if(index > 25):
-        index = 1 + self.key
+      if command == 'decipher': 
+        key *= -1
+      
+      new_index = base_index + key
 
-      new_word += self.alphabet[index]
+      if(new_index > len(self.alphabet) - 1):
+        new_index -= len(self.alphabet)
+      elif(new_index < 0):
+        new_index += len(self.alphabet)
 
-    return new_word.lower()
-
-  def decipher(self, word):
-    new_word = ''
-
-    for letter in word:
-      index = self.alphabet.index(letter.upper()) - self.key
-
-      if(index < 0):
-        index = self.alphabet.count() + self.key
-
-      new_word += self.alphabet[index]
+      new_word += self.alphabet[new_index]
 
     return new_word.lower()

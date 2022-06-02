@@ -10,10 +10,6 @@ class Cayce:
     }
     self.action = None
     self.caesar = CaesarCipher()
-    self.actions = {
-      'cipher': self.caesar.cipher,
-      'decipher': self.caesar.decipher
-    }
 
   def get_action(self):
     if(self.option in self.options):
@@ -46,7 +42,7 @@ class Cayce:
       if self.option != 0:
         word = self.get_word()
 
-        new_word = self.actions[self.action](word)
+        new_word = self.caesar.execute(word, self.action)
 
         print(f'\n\nResultado: {new_word}\n\n')
       else:
