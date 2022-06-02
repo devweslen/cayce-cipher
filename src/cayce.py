@@ -12,8 +12,7 @@ class Cayce:
     self.caesar = CaesarCipher()
 
   def get_action(self):
-    if(self.option in self.options):
-      self.action = self.options[self.option]['key']
+    self.action = self.options[self.option]['key']
 
   def get_option(self):
     print('O que deseja fazer?')

@@ -1,6 +1,6 @@
 class CaesarCipher:
   def __init__(self):
-    self.key = 5
+    self.key = 25
     self.alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
   def execute(self, word: str, command: str):
