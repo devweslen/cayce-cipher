@@ -3,6 +3,9 @@ class CaesarCipher:
     self.base_key = 25
     self.alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
+  def set_base_key(self, key):
+    self.base_key = key
+
   def execute(self, word: str, command: str):
     new_word = ''
 
